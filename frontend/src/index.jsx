@@ -39,10 +39,16 @@ const BackendGreeting = (props) => (
 );
 
 const BackendSensors = (props) => {
-  const lista = props.sensors.length ? props.sensors[props.sensors.length - 1] : null;
-  const last = JSON.stringify(lista)
+  if (props.sensors.length === 0) {
+    return <p>No data</p>
+  }
+  const vika = props.sensors[props.sensors.length - 1];
+  // const moi = JSON.stringify(lista)
+  // const hei=moi.split(",")
+  // const teksti=hei[2]+"°C,"+hei[3]+"%"
+  // const last=JSON.stringify(teksti)
   return (
-  <div><p>Last data: {last}</p></div>
+  <div><p>Last data: Temperature:{vika.temperature}°C, humidity:{vika.humidity}%</p></div>
 )};
 
 
