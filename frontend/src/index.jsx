@@ -21,10 +21,29 @@ const getGreetingFromBackend = async () => {
   return { greeting :"Could not get greeting from backend"};
 };
 
+const getSensorsFromBackend = async () => {
+  try {
+    const url = `${baseURL}/api/sensors`
+    console.log("Getting greeting from "+url)
+    const response = await fetch(url);
+    return response.json()
+  } catch (error) {
+    console.error(error);
+  }
+  return { sensors :"Could not get greeting from backend"};
+};
+
 
 const BackendGreeting = (props) => (
   <div><p>Backend says: {props.greeting}</p></div>
 );
+
+const BackendSensors = (props) => {
+  const lista = props.sensors.length ? props.sensors[props.sensors.length - 1] : null;
+  const last = JSON.stringify(lista)
+  return (
+  <div><p>Last data: {last}</p></div>
+)};
 
 
 class App extends Component {
@@ -33,21 +52,22 @@ class App extends Component {
     super(props);
     this.state = {
       greeting: "",
+      sensors: []
     };
   }
 
   async componentWillMount() {
-    const response = await getGreetingFromBackend();
-    this.setState({greeting: response.greeting});
+    const response = await getSensorsFromBackend();
+    this.setState({sensors: response.results});
   }
 
   render() {
-
     return (
-      <BackendGreeting greeting={this.state.greeting} />
+      <BackendSensors sensors={this.state.sensors} />
     );
   }
 }
+
 
 /****** DO NOT DELETE AFTER THIS LINE ******/
 
