@@ -1,0 +1,53 @@
+{
+  "name": "chat-backend",
+  "version": "0.0.1",
+  "description": "Socket.io Chat Backend",
+  "author": "Marko Klemetti <marko.klemetti@gmail.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrako/socket-chat.git"
+  },
+  "engines": {
+    "node": ">=7"
+  },
+  "main": "server.js",
+  "scripts": {
+    "dev": "LOGGING=true ./node_modules/.bin/nodemon server.js",
+    "test": "DATABASE_URL=${DATABASE_URL:-postgres://chat:chat@localhost/chat_test} ./node_modules/mocha/bin/mocha --no-warnings",
+    "test:xunit": "DATABASE_URL=${DATABASE_URL:-postgres://chat:chat@localhost/chat_test} ./node_modules/mocha/bin/mocha -R xunit > ${OUTPUT:-test-results.xml}",
+    "start": "node server.js",
+    "lint": "./node_modules/.bin/eslint --ext .js db scripts src test"
+  },
+  "dependencies": {
+    "kcors": "^2.2.1",
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "pg": "^7.4.3",
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.0.0",
+    "socket.io": "^2.1.1",
+    "uglify-js": "^3.4.2"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "methods": "^1.1.2",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.17.5",
+    "request": "^2.87.0",
+    "sinon": "^6.0.1",
+    "supertest": "^3.1.0"
+  }
+}

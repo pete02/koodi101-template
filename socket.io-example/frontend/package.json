@@ -1,0 +1,56 @@
+{
+  "name": "chat-frontend",
+  "version": "0.0.1",
+  "description": "Socket.io Chat Dashboard",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrako/socket-chat.git"
+  },
+  "author": "Marko Klemetti <marko.klemetti@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "./node_modules/.bin/webpack-dev-server --config config/webpack.config.development.js --progress --inline --colors",
+    "build": "./node_modules/.bin/webpack --config config/webpack.config.production.js --progress --colors",
+    "lint": "./node_modules/.bin/eslint --ext .js --ext .jsx src/"
+  },
+  "dependencies": {
+    "moment": "^2.22.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
+    "semantic-ui-css": "^2.3.2",
+    "semantic-ui-react": "^0.81.3",
+    "socket.io-client": "^2.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.49",
+    "@babel/polyfill": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "@babel/preset-react": "^7.0.0-beta.49",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^8.0.0-beta",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^0.28.11",
+    "eslint": "^5.0.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.10.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "script-ext-html-webpack-plugin": "^2.0.1",
+    "style-loader": "^0.21.0",
+    "transfer-webpack-plugin": "^0.1.4",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.12.2",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.3"
+  }
+}
