@@ -9,3 +9,8 @@ exports.sync = (options) => {
 exports.transaction = (options) => {
   return sequelize.transaction(options);
 };
+
+
+exports.InSensor = require('./models/insensor');
+
+

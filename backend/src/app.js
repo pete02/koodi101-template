@@ -6,6 +6,7 @@ const cors = require('kcors');
 
 const sensors = require('./controllers/sensors');
 const greeting = require('./controllers/greeting');
+const insensors = require('./controllers/insensors')
 
 const app = module.exports = new Koa();
 
@@ -18,6 +19,9 @@ const publicRouter = new Router({ prefix: '/api' });
 
 publicRouter.post('/sensors', sensors.create);
 publicRouter.get('/sensors', sensors.list);
+
+publicRouter.post('/insensors', insensors.create);
+publicRouter.get('/insensors', insensors.list);
 
 publicRouter.get('/greeting', greeting.greet);
 
