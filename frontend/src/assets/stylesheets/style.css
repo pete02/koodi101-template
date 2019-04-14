@@ -1,11 +1,26 @@
 html, body {
   margin: 0;
   height: 100%;
+  background-color: rgb(29, 29, 29);
 }
 
 #root {
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  font-size: 24px;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: rgb(46, 46, 46);
+  color: rgb(149, 218, 47);
+}
+
+
+#wrap{
+  
 }

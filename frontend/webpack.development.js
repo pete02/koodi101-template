@@ -11,7 +11,7 @@ module.exports = {
     main: ['babel-polyfill', path.join(__dirname, 'src/index.jsx')],
   },
   devServer: {
-    contentBase: path.join(__dirname, 'src/public'),
+    contentBase: path.join(__dirname, 'src/'),
     historyApiFallback: true,
     disableHostCheck: true,
     host: process.env.HOST || '0.0.0.0',
@@ -24,7 +24,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: 'src/public/index.html',
+      template: 'src/index.html',
       filename: 'index.html',
     }),
     new ExtractTextPlugin('[name].[hash:8].css'),

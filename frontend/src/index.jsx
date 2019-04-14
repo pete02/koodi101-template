@@ -55,7 +55,7 @@ const BackendSensors = (props) => {
   if (props.sensors.length === 0){
     return <p>No data</p>
   }
-
+  console.log(props.sensors)
   const vika = props.sensors[props.sensors.length - 1];
   // const moi = JSON.stringify(lista)
   // const hei=moi.split(",")
@@ -65,15 +65,16 @@ const BackendSensors = (props) => {
   if (props.insensors.length ===0){
     return (
      <div><p>
-     out: Temperature:{vika.temperature}°C, humidity:{vika.humidity}%
+     out:{vika.temperature}°C,{vika.humidity}%
      in:No Data
       </p></div>
     )};
   const eka = props.insensors[props.insensors.length -1];
   return (
     <div><p>
-    out: Temperature:{vika.temperature}°C, humidity:{vika.humidity}%
-    in: Temperature:{eka.temperature}°C, humidity:{eka.humidity}%
+      in:{eka.temperature}°C,{eka.humidity}%<br></br>
+    out: {vika.temperature}°C,{vika.humidity}%<br></br>
+    press for chart
      </p></div>
    )
 
@@ -111,6 +112,6 @@ class App extends Component {
 /****** DO NOT DELETE AFTER THIS LINE ******/
 
 ReactDOM.render(
-  <App />,
+ <App />,
   document.getElementById('root')
 );
